@@ -1,0 +1,188 @@
+<!--
+FRP (Fresh Residential Projects) - Single-file website
+Instructions:
+  1) Save this file as `index.html`.
+  2) Replace placeholder images (images/*) with your actual assets or update the <img> src links.
+  3) Optional: split assets into folders (/css, /images, /js) for a cleaner repo.
+  4) Deploy to GitHub Pages, Netlify, Vercel, or S3 (see the "LAUNCH & DEPLOY" section at the bottom of this page for step-by-step instructions).
+
+Design notes:
+  - Mobile-responsive layout using CSS grid and flexbox.
+  - Hero, About, Services, Projects (cards), Contact form (static; uses `mailto:` by default), Footer.
+  - Replace color palette, logo, and copy to match your Canva site: https://freshresidentialprojects.my.canva.site/
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fresh Residential Projects — Transforming Property Decisions into Profitable Investments</title>
+  <meta name="description" content="Data-driven research & advisory for new residential project launches across India.">
+  <meta name="author" content="Fresh Residential Projects (FRP)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230074c7'/%3E%3Ctext x='50' y='58' font-size='40' text-anchor='middle' fill='white' font-family='Arial'%3EFRP%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{--accent:#0074c7;--muted:#6b7280;--bg:#f7f9fc;--card:#ffffff;--radius:14px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#0f172a;background:linear-gradient(180deg,var(--bg),#ffffff)}
+    .container{max-width:1100px;margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav a{margin-left:16px;text-decoration:none;color:var(--muted);font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:28px}
+    .hero-card{background:var(--card);padding:28px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(12,20,40,0.06)}
+    h1{margin:0 0 8px;font-size:28px;color:#071133}
+    p.lead{margin:0;color:var(--muted);line-height:1.5}
+    .cta{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:12px;background:var(--accent);color:white;text-decoration:none;font-weight:700}
+    .stats{display:flex;gap:12px;margin-top:18px}
+    .stat{background:#f1f5f9;padding:10px 14px;border-radius:10px;text-align:center}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:24px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 14px rgba(12,20,40,0.04)}
+    .project-hero{width:100%;height:170px;border-radius:10px;background-size:cover;background-position:center}
+    footer{margin-top:36px;padding:18px 0;color:var(--muted);text-align:center}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}nav{display:none}}
+    /* Simple contact form styles */
+    form{display:grid;gap:8px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #e6eef8;font-size:14px}
+    button{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:700}
+    .badge{display:inline-block;background:#e6f2ff;color:var(--accent);padding:6px 9px;border-radius:999px;font-weight:700}
+    /* LAUNCH section styles */
+    .launch{margin-top:28px;background:#fff8e6;border:1px solid #ffecb5;padding:18px;border-radius:12px}
+    .muted-small{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">FRP</div>
+        <div>
+          <div style="font-weight:800">Fresh Residential Projects</div>
+          <div class="muted-small">Transforming property decisions into profitable investments</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="badge">Research · Advisory · Launch Intelligence</div>
+        <h1>Data-backed insights for new residential project launches</h1>
+        <p class="lead">We help investors and home buyers discover profitable new launches with market reports, pricing heatmaps, and delivery-risk analysis across Indian metros.</p>
+        <a class="cta" href="#contact">Get a free consultation</a>
+        <div class="stats">
+          <div class="stat"><strong>200+</strong><div class="muted-small">Projects researched</div></div>
+          <div class="stat"><strong>30+</strong><div class="muted-small">Cities covered</div></div>
+          <div class="stat"><strong>10+ yrs</strong><div class="muted-small">Collective experience</div></div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3 style="margin-top:0">Featured consultation</h3>
+        <p class="muted-small">Book a 30-minute call with our lead researcher to evaluate a launch pipeline or investment opportunity.</p>
+        <dl style="margin-top:12px">
+          <dt style="font-weight:700">Price</dt>
+          <dd class="muted-small">Custom — contact for details</dd>
+        </dl>
+        <a href="#contact" class="cta" style="display:block;text-align:center">Book now</a>
+      </aside>
+    </section>
+
+    <section id="services" style="margin-top:24px">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card"><h3>Market Mapping</h3><p class="muted-small">Supply-demand gap analysis, micro-market pricing and absorption rates.</p></div>
+        <div class="card"><h3>Project Viability</h3><p class="muted-small">Builder risk scoring, timelines, delivery history and legal flags.</p></div>
+        <div class="card"><h3>Custom Reports</h3><p class="muted-small">Investor-ready reports and deal sheets tailored to your portfolio.</p></div>
+        <div class="card"><h3>Launch Alerts</h3><p class="muted-small">Real-time alerts for new launches and price movements in chosen sectors.</p></div>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:24px">
+      <h2>Recent Projects Researched</h2>
+      <div class="grid">
+        <!-- Replace background-image URLs with real screenshots from your Canva site or project images -->
+        <div class="card">
+          <div class="project-hero" style="background-image:url('images/project1.jpg')"></div>
+          <h4>Sector 104 — Indiabulls Heights</h4>
+          <p class="muted-small">2–4 BHK | 6 acres | 40 floors | Estimated possession: 4–5 years</p>
+        </div>
+
+        <div class="card">
+          <div class="project-hero" style="background-image:url('images/project2.jpg')"></div>
+          <h4>Signature Greens — New Launch</h4>
+          <p class="muted-small">Luxury towers, premium amenities, early-bird pricing analysis included.</p>
+        </div>
+
+        <div class="card">
+          <div class="project-hero" style="background-image:url('images/project3.jpg')"></div>
+          <h4>City Edge — Affordable Segment</h4>
+          <p class="muted-small">High absorption forecast and proximity to transit.</p>
+        </div>
+
+        <div class="card">
+          <div class="project-hero" style="background-image:url('images/project4.jpg')"></div>
+          <h4>Greenway Plaza — Mid-segment</h4>
+          <p class="muted-small">Strong rental yield projection and investor demand signals.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:24px">
+      <h2>About FRP</h2>
+      <p class="muted-small">FRP is a real estate research and advisory firm focused on new residential launches. Our team combines market intel, project-level diligence, and investment-grade reporting to help clients make informed property decisions.</p>
+    </section>
+
+    <section id="contact" style="margin-top:24px">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Send a message</h4>
+          <!-- Static contact form that opens the user's email client. For server-side form handling, replace the form action with your form endpoint. -->
+          <form action="mailto:hello@freshresidentialprojects.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h4>Office</h4>
+          <p class="muted-small">Gurugram, India<br>Email: hello@freshresidentialprojects.com<br>Phone: +91-XXXXXXXXXX</p>
+          <h4 style="margin-top:14px">Follow</h4>
+          <p class="muted-small">LinkedIn | YouTube | Instagram</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="launch">
+      <h3>LAUNCH & DEPLOY</h3>
+      <ol>
+        <li>Save this file as <code>index.html</code>. Add your images into an <code>images/</code> folder (or update the image URLs).</li>
+        <li>Option A (Free & easy): Deploy to <strong>GitHub Pages</strong> by creating a repository named <code>username.github.io</code>, commit this file to <code>main</code>, then enable Pages from the repository settings.</li>
+        <li>Option B (drag-and-drop + custom domain): Use <strong>Netlify</strong> — simply drag & drop the site folder or connect a Git repo. Configure custom domain & SSL in Netlify dashboard.</li>
+        <li>Option C (fast CI, previews): Use <strong>Vercel</strong> — import the Git repo and set domain settings; automatic deployments for every push.</li>
+        <li>Option D (scalable, enterprise): Host on AWS S3 + CloudFront and use Route 53 for DNS + AWS Certificate Manager for SSL.</li>
+        <li>DNS & custom domain: Buy a domain from any registrar (GoDaddy, Google Domains, Namecheap). Then point A/CNAME or use the provider instructions to connect to GitHub/Netlify/Vercel. Update DNS TTL and wait (usually minutes to a few hours) for propagation.</li>
+        <li>Verify SSL: GitHub Pages, Netlify and Vercel automatically issue Let's Encrypt certificates for custom domains. For AWS CloudFront, request a certificate with AWS Certificate Manager in the same region/edge configuration.</li>
+      </ol>
+      <p class="muted-small">If you want, I can: create a GitHub repo with this file, produce the exact DNS records you need for your chosen domain, or prepare deployment commands for Netlify/Vercel/AWS.</p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Fresh Residential Projects — Built with data & care
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
